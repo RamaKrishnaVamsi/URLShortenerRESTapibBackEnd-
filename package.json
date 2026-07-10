@@ -4,7 +4,8 @@
   "description": "To build a secure RESTful backend application that allows registered users to convert long URLs into short, unique links, track click analytics, configure expiration dates for links, and manage their own URLs through authenticated API endpoints.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -24,5 +25,13 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RamaKrishnaVamsi/URLShortenerRESTapi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RamaKrishnaVamsi/URLShortenerRESTapi/issues"
+  },
+  "homepage": "https://github.com/RamaKrishnaVamsi/URLShortenerRESTapi#readme"
 }
