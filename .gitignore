@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# VS Code settings
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# macOS system files
+.DS_Store

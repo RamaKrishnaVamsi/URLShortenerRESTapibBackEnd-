@@ -6,13 +6,12 @@ exports.register = async (req , res) =>{
         const {userName,id,name,email,password} = req.body;
         let user = await User.findOne({ email });
         
-
         if(user){
           return res.status(400).json({message:"User already exists"});
         }
 
         const Hpassword = await bcrypt.hash(password , 10);
-        user = new User({ id , name , email , password});
+        user = new User({ id , name , email , password : Hpassword});
         await user.save();  
         
         res.status(201).json({
@@ -72,7 +71,7 @@ exports.getUser = async (req , res) =>{
         const user= await User.findById(req.user.id).select('-password');
         res.json(user);
     }catch(err){
-        console.log(err.message)
+        console.log(err.message);
         res.status(500).json('Server Error')
     }
 }
