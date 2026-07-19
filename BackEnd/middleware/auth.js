@@ -4,9 +4,9 @@ module.exports = function(req , res ,next){
     const authHeader = req.header('Authorization');
     let token;
 
-    if(authHeader && authHeader.startsWith('Bearer ')){
+    if (authHeader && authHeader.startsWith('Bearer ')) {
         token = authHeader.split(' ')[1];
-    }else{
+    } else {
         token = authHeader;
     }
 

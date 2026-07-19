@@ -7,8 +7,8 @@ const {registerValidation , loginValidation , urlValidation ,validate} = require
 
 
 router.post('/register',registerValidation , validate , authController.register);
-router.post('/login' , loginValidation, validate , authController.login);   
-router.get('/user' , auth ,urlValidation , validate , authController.getUser);  
+router.post('/login', loginValidation, validate, authController.login);
+router.get('/user', auth, authController.getUser);
 
 
 module.exports= router;

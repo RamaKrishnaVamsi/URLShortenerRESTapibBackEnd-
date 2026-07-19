@@ -34,9 +34,10 @@ exports.validate = (req , res,next) => {
     const error = validationResult(req);
 
     if(!error.isEmpty()){
+        // console.log("hello");
         return res.status(400).json({
             success : false,
-            errors : errors.array()
+            errors : error.array()
         });
     }
 

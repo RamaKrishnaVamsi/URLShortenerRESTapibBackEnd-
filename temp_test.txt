@@ -1,0 +1,3 @@
+line1
+config.headers.Authorization = `Bearer ${token}`;
+line3

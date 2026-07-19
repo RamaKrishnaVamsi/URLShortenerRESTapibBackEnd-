@@ -10,13 +10,28 @@ exports.register = async (req , res) =>{
           return res.status(400).json({message:"User already exists"});
         }
 
-        const Hpassword = await bcrypt.hash(password , 10);
-        user = new User({ id , name , email , password : Hpassword});
-        await user.save();  
-        
+        user = new User({ name, email, password });
+        await user.save();
+
+        const token = jwt.sign(
+            {
+                id: user._id
+            },
+            process.env.JWT_SECRET,
+            {
+                expiresIn: "1d"
+            }
+        );
+
         res.status(201).json({
-        success: true,
-        message: "User Registered Successfully"
+            success: true,
+            message: "User Registered Successfully",
+            token,
+            user: {
+                id: user._id,
+                name: user.name,
+                email: user.email
+            }
         });
     }catch(err){
         console.log("Server Dengindi:-1")
