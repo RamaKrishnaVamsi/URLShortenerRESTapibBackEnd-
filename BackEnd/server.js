@@ -31,8 +31,4 @@ app.get("/:shortCode", redirectUrl);
 // DataBase Connection 
 require("./config/db.js");
 
-const port = process.env.PORT || 7000;
-
-app.listen(port, () => {
-  console.log("Server is running at", port);
-});
+const port = 7000;
